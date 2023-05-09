@@ -7,21 +7,35 @@ namespace Basic_Practice_Problems
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Basic Practice Problems!");
-            Console.WriteLine("Count a total number of Duplicate elements in an array");
-            int[] array = new int[10];
-            Console.WriteLine("Enter 10 elements");
-            for (int i = 0; i < array.Length; i++)
+            Console.WriteLine("Find maximum and minimum element in an array");
+            int[] arr1 = new int[100];
+            int i, mx, mn, n;
+            Console.Write("Enter array size: ");
+            n = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter {0} elements in the array", n);
+
+            for (i = 0; i < n; i++)
             {
-                array[i] = Convert.ToInt32(Console.ReadLine());
+                Console.Write("element - {0} : ", i);
+                arr1[i] = Convert.ToInt32(Console.ReadLine());
             }
-            var dict = new Dictionary<int, int>();
-            foreach (var value in array)
+
+            mx = arr1[0];
+            mn = arr1[0];
+            for (i = 1; i < n; i++)
             {
-                if (dict.ContainsKey(value)) dict[value]++;
-                else dict[value] = 1;
+                if (arr1[i] > mx)
+                {
+                    mx = arr1[i];
+                }
+
+                if (arr1[i] < mn)
+                {
+                    mn = arr1[i];
+                }
             }
-            foreach (var pair in dict)
-                Console.WriteLine("Value {0} occurred {1} times", pair.Key, pair.Value);
+            Console.WriteLine("Maximum element is : {0}", mx);
+            Console.WriteLine("Minimum element is : {0}", mn);
         }
     }
 }
