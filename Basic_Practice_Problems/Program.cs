@@ -8,15 +8,24 @@ namespace Basic_Practice_Problems
         {
             Console.WriteLine("Welcome to Basic Practice Problems!");
             Console.WriteLine("Program to Print a Pattern");
-            int i, n;
-            Console.Write("Enter number of rows to draw pattern: ");
-            n = Convert.ToInt32(Console.ReadLine());
+            int size, row, column;
+            Console.Write("Enter size to draw pattern: ");
+            size = Convert.ToInt32(Console.ReadLine());
 
-            for (i = 0; i < n; i++)
+            for ( row = 0; row < size; row++)
             {
-                string pattern = new string('*', (n - i));
-                string res = string.Join(" ", pattern.ToArray());
-                Console.WriteLine(res);
+                for ( column = 0; column < size; column++)
+                {
+                    if (row == 0 || column == 0 || row == size - 1 || column == size - 1)
+                    {
+                        Console.Write("* ");
+                    }
+                    else
+                    {
+                        Console.Write("  ");
+                    }
+                }
+                Console.WriteLine();
             }
         }
     }
