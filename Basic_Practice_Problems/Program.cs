@@ -7,17 +7,18 @@ namespace Basic_Practice_Problems
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Basic Practice Problems!");
-            Console.WriteLine("Program to Reverse Each Word in a given String!");
-            Console.WriteLine("Enter a String:");
-            string s = Console.ReadLine();
-            string rev = "";
-            int length = s.Length - 1;
-            while (length >= 0)
+            Console.WriteLine("Program to find Sum of all Digits of a Given Number!");
+            Console.WriteLine("Enter a number:");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int sum = 0, a;
+            while (n != 0)
             {
-                rev = rev + s[length];
-                length--;
+                a = n % 10;
+                sum += a;
+                n = n / 10;
             }
-            Console.WriteLine("After reverse: " + rev);
+            
+            Console.WriteLine("Sum of all digits: " + sum);
         }
     }
 }
